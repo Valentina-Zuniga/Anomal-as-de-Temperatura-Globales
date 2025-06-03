@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualización de Anomalías de Temperatura</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Anomalías de Temperatura Globales (2024)</h1>
+        <p>Visualización interactiva de anomalías de temperatura por país</p>
+    </header>
+    <section id="controls">
+        <label for="country-select">Filtrar por país:</label>
+        <select id="country-select">
+            <option value="all">Todos</option>
+        </select>
+        <label for="anomaly-range">Rango de anomalía:</label>
+        <input type="range" id="anomaly-range" min="-2" max="4" step="0.1" value="4">
+        <span id="anomaly-value">≤ 4</span>
+    </section>
+    <main>
+        <div id="map" style="height: 500px;"></div>
+        <div id="charts">
+            <canvas id="time-series-chart"></canvas>
+            <canvas id="comparison-chart"></canvas>
+        </div>
+    </main>
+    <footer>
+        <p>Fuente de datos: <em>annual-temperature-anomalies.csv</em></p>
+    </footer>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
