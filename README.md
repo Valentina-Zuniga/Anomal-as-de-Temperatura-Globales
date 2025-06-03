@@ -1,0 +1,1 @@
+# Anomal-as-de-Temperatura-Globales
